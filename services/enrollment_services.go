@@ -67,7 +67,6 @@ func EditEnrollmentSchedule(enroll_id, class_id, schedule_id string) {
 	}
 	defer file.Close()
 	go enroll.JsonEncode(file, enrollments)
-
 }
 
 func GetEnrollment() (enrollments []enrollment.Enrollments) {
@@ -191,4 +190,25 @@ func scheduleForm(schdules []string) string {
 
 		return id
 	}
+}
+
+func DeleteEnrollment(enroll_id string) {
+	var enroll enrollment.Enrollments
+	var newEnroll []enrollment.Enrollments
+	enrollments := GetEnrollment()
+
+	for _, enrollment := range enrollments {
+		if enrollment.Id != enroll_id {
+			newEnroll = append(newEnroll, enrollment)
+		}
+	}
+
+	file, err := utils.GetJsonFileName("enrollments")
+	if err != nil {
+		fmt.Println("Open file error message: ", err)
+		return
+	}
+	defer file.Close()
+	go enroll.JsonEncode(file, enrollments)
+	return
 }

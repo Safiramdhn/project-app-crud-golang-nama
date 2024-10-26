@@ -70,7 +70,7 @@ func DashboardMenu(ctx context.Context) {
 			printAddClassForm(studentId)
 		case 4:
 			// delete enrollment
-			printDeleteForm(studentId)
+			printDeleteEnrollForm(studentId)
 		case 5:
 			printDeactiveEnrollment(studentId)
 		case 99:

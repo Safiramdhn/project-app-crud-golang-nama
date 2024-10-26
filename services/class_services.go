@@ -3,12 +3,13 @@ package services
 import (
 	"fmt"
 
-	models "github.com/Safiramdhn/project-app-crud-golang-safira/models/classes"
+	class "github.com/Safiramdhn/project-app-crud-golang-safira/models/classes"
+	enrollment "github.com/Safiramdhn/project-app-crud-golang-safira/models/enrollments"
 	"github.com/Safiramdhn/project-app-crud-golang-safira/utils"
 )
 
-func GetClasses() (classes []models.Class) {
-	var class models.Class
+func GetClasses() (classes []class.Class) {
+	var class class.Class
 
 	file, err := utils.GetJsonFileName("class")
 	if err != nil {
@@ -33,7 +34,7 @@ func GetClasses() (classes []models.Class) {
 	return classes
 }
 
-func GetStudentClass(class_id string) (studenClass models.Class) {
+func GetStudentClass(class_id string) (studenClass class.Class) {
 	clasess := GetClasses()
 
 	for _, class := range clasess {
@@ -42,4 +43,21 @@ func GetStudentClass(class_id string) (studenClass models.Class) {
 		}
 	}
 	return studenClass
+}
+
+func InitiateEnrolledClass(studentEnroll []enrollment.Enrollments) []enrollment.EnrolledClass {
+	var studentClasses []enrollment.EnrolledClass
+	for _, enroll := range studentEnroll {
+		studentClass := enrollment.EnrolledClass{
+			Id:         enroll.Id,
+			Class_id:   enroll.Class.Id,
+			Title:      enroll.Class.Title,
+			Class_type: enroll.Class.Type,
+			Instructor: enroll.Class.Instructor,
+			Schedule:   enroll.Schedule,
+		}
+		studentClasses = append(studentClasses, studentClass)
+	}
+
+	return studentClasses
 }

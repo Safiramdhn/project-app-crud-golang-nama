@@ -19,6 +19,15 @@ type Enrollments struct {
 	Status   string            `json:"status"`
 }
 
+type EnrolledClass struct {
+	Id         string
+	Class_id   string
+	Title      string
+	Class_type string
+	Instructor string
+	Schedule   schedule.Schedule
+}
+
 func (e *Enrollments) JsonDecode(file *os.File) ([]Enrollments, error) {
 	var enrollments []Enrollments
 	decoder := json.NewDecoder(file)
