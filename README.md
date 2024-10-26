@@ -127,7 +127,7 @@ Password: aniketoss001
   5: Enrollment History
   99: Logout
 
-# #Data Storage
+## Data Storage
 The application uses JSON files to store data:
 - students.json: Student information
 - courses.json: Course information
