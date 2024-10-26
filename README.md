@@ -1,4 +1,4 @@
-# Choco Academy - Student Enrollment System
+![Screenshot 2024-10-26 100847](https://github.com/user-attachments/assets/484a4fb7-9d8d-4323-9815-02c4768eb362)# Choco Academy - Student Enrollment System
 
 A Go-based CLI application for managing student enrollments in an academic setting.
 
@@ -11,9 +11,11 @@ Choco Academy is a student enrollment management system that allows students to:
 - Add new classes
 - Delete enrollments
 - View enrollment history
+![ERD](https://github.com/user-attachments/assets/e8c61d8f-5c2a-48d7-8c85-b40b027f5be0)
 
 ## Project Structure
-project-app-crud-golang-safira/ 
+```
+project-app-crud-golang-safira/
 ├── models/ 
 │ ├── classes/ 
 │ │ ├── class_model.go 
@@ -44,6 +46,7 @@ project-app-crud-golang-safira/
 │ ├── main_view.go 
 │ └── schedule_view.go
 └── README.md
+```
 
 ## Features
 ### Authentication
