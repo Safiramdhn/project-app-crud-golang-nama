@@ -1,0 +1,351 @@
+{
+    "classes": [
+        {
+            "id": "C001",
+            "title": "Programming Fundamental",
+            "description": "An introductory course covering the basics of programming concepts and algorithms.",
+            "type": "online",
+            "courses": [
+                {
+                    "id": "M101",
+                    "title": "Programming Algorithm",
+                    "description": "This is a programming algorithm course"
+                }
+            ],
+            "instructor": "Mary Beth Julien",
+            "schedules": [
+                {
+                    "id": "D006",
+                    "day": "Tuesday",
+                    "time": "08:30"
+                },
+                {
+                    "id": "D010",
+                    "day": "Wednesday",
+                    "time": "08:30"
+                }
+            ]
+        },
+        {
+            "id": "C002",
+            "title": "Programming Fundamental",
+            "description": "An introductory course focusing on basic programming skills using the Go language.",
+            "type": "offline",
+            "courses": [
+                {
+                    "id": "M102",
+                    "title": "Introduction to Go",
+                    "description": "Learn the basics of Go programming language."
+                },
+                {
+                    "id": "M201",
+                    "title": "Data Structures in Go",
+                    "description": "Understand data structures using Go."
+                }
+            ],
+            "instructor": "Mary Beth Julien",
+            "schedules": [
+                {
+                    "id": "D019",
+                    "day": "Friday",
+                    "time": "10:00"
+                }
+            ]
+        },
+        {
+            "id": "C003",
+            "title": "Programming Fundamental",
+            "description": "A foundational course in programming principles and practices, tailored for online learners.",
+            "type": "online",
+            "courses": [
+                {
+                    "id": "M101",
+                    "title": "Programming Algorithm",
+                    "description": "This is a programming algorithm course"
+                }
+            ],
+            "instructor": "Damiaan Perez",
+            "schedules": [
+                {
+                    "id": "D004",
+                    "day": "Monday",
+                    "time": "13:00"
+                },
+                {
+                    "id": "D009",
+                    "day": "Wednesday",
+                    "time": "07:15"
+                },
+                {
+                    "id": "D011",
+                    "day": "Wednesday",
+                    "time": "10:00"
+                }
+            ]
+        },
+        {
+            "id": "C004",
+            "title": "Go Lang Fundamental",
+            "description": "An essential course for understanding the Go programming language and its applications.",
+            "type": "hybrid",
+            "courses": [
+                {
+                    "id": "M102",
+                    "title": "Introduction to Go",
+                    "description": "Learn the basics of Go programming language."
+                },
+                {
+                    "id": "M201",
+                    "title": "Data Structures in Go",
+                    "description": "Understand data structures using Go."
+                }
+            ],
+            "instructor": "Vilja Matsumura",
+            "schedules": [
+                {
+                    "id": "D002",
+                    "day": "Monday",
+                    "time": "08:30"
+                },
+                {
+                    "id": "D008",
+                    "day": "Tuesday",
+                    "time": "13:00"
+                },
+                {
+                    "id": "D015",
+                    "day": "Thurday",
+                    "time": "10:00"
+                }
+            ]
+        },
+        {
+            "id": "C005",
+            "title": "Go Lang Concurrency",
+            "description": "A course designed to introduce the concepts of concurrent programming in Go.",
+            "type": "online",
+            "courses": [
+                {
+                    "id": "M202",
+                    "title": "Concurrency in Go",
+                    "description": "An introduction to concurrent programming with Go."
+                }
+            ],
+            "instructor": "Gobnat Eide",
+            "schedules": [
+                {
+                    "id": "D001",
+                    "day": "Monday",
+                    "time": "07:15"
+                }
+            ]
+        },
+        {
+            "id": "C006",
+            "title": "Golang Web Development",
+            "description": "Learn to develop web applications using Go, focusing on frameworks and database management.",
+            "type": "hybrid",
+            "courses": [
+                {
+                    "id": "M301",
+                    "title": "Web Development with Go",
+                    "description": "Learn to build web applications using Go and the Gin framework."
+                },
+                {
+                    "id": "M302",
+                    "title": "Testing in Go",
+                    "description": "A guide to testing and test-driven development in Go."
+                },
+                {
+                    "id": "M401",
+                    "title": "Database Management with Go",
+                    "description": "Learn how to interact with SQL and NoSQL databases in Go."
+                }
+            ],
+            "instructor": "Kira Jiang",
+            "schedules": [
+                {
+                    "id": "D004",
+                    "day": "Monday",
+                    "time": "13:00"
+                }
+            ]
+        },
+        {
+            "id": "C007",
+            "title": "Database in Go Lang",
+            "description": "A course focused on database management and interaction using Go.",
+            "type": "online",
+            "courses": [
+                {
+                    "id": "M401",
+                    "title": "Database Management with Go",
+                    "description": "Learn how to interact with SQL and NoSQL databases in Go."
+                }
+            ],
+            "instructor": "Nikolaus Ortega",
+            "schedules": [
+                {
+                    "id": "D006",
+                    "day": "Tuesday",
+                    "time": "08:30"
+                },
+                {
+                    "id": "D007",
+                    "day": "Tuesday",
+                    "time": "10:00"
+                },
+                {
+                    "id": "D012",
+                    "day": "Wednesday",
+                    "time": "13:00"
+                }
+            ]
+        },
+        {
+            "id": "C008",
+            "title": "Go Lang Advance",
+            "description": "An advanced course covering microservices, patterns, and best practices in Go development.",
+            "type": "offline",
+            "courses": [
+                {
+                    "id": "M402",
+                    "title": "Microservices in Go",
+                    "description": "An introduction to building microservices with Go."
+                },
+                {
+                    "id": "M501",
+                    "title": "Advanced Go Patterns",
+                    "description": "Explore advanced programming patterns in Go."
+                }
+            ],
+            "instructor": "Mihajlo Scott",
+            "schedules": [
+                {
+                    "id": "D013",
+                    "day": "Thurday",
+                    "time": "07:15"
+                },
+                {
+                    "id": "D014",
+                    "day": "Thurday",
+                    "time": "08:30"
+                }
+            ]
+        },
+        {
+            "id": "C009",
+            "title": "Artificial Intelligence in Go Lang",
+            "description": "A course introducing machine learning concepts and their applications in Go.",
+            "type": "online",
+            "courses": [
+                {
+                    "id": "M502",
+                    "title": "Machine Learning with Go",
+                    "description": "An introduction to machine learning concepts using Go."
+                }
+            ],
+            "instructor": "Delila Ashton",
+            "schedules": [
+                {
+                    "id": "D002",
+                    "day": "Monday",
+                    "time": "08:30"
+                },
+                {
+                    "id": "D016",
+                    "day": "Thurday",
+                    "time": "13:00"
+                },
+                {
+                    "id": "D009",
+                    "day": "Wednesday",
+                    "time": "07:15"
+                }
+            ]
+        },
+        {
+            "id": "C010",
+            "title": "Programming Fundamental",
+            "description": "A foundational course in programming principles and practices, tailored for online learners.",
+            "type": "online",
+            "courses": [
+                {
+                    "id": "M101",
+                    "title": "Programming Algorithm",
+                    "description": "This is a programming algorithm course"
+                }
+            ],
+            "instructor": "Franka Baggio",
+            "schedules": [
+                {
+                    "id": "D007",
+                    "day": "Tuesday",
+                    "time": "10:00"
+                }
+            ]
+        },
+        {
+            "id": "C011",
+            "title": "Go Lang Advance",
+            "description": "An advanced course covering microservices, patterns, and best practices in Go development.",
+            "type": "hybrid",
+            "courses": [
+                {
+                    "id": "M402",
+                    "title": "Microservices in Go",
+                    "description": "An introduction to building microservices with Go."
+                },
+                {
+                    "id": "M501",
+                    "title": "Advanced Go Patterns",
+                    "description": "Explore advanced programming patterns in Go."
+                }
+            ],
+            "instructor": "Helga Brooke",
+            "schedules": [
+                {
+                    "id": "D001",
+                    "day": "Monday",
+                    "time": "07:15"
+                },
+                {
+                    "id": "D 018",
+                    "day": "Friday",
+                    "time": "08:30"
+                }
+            ]
+        },
+        {
+            "id": "C012",
+            "title": "Artificial Intelligence in Go Lang",
+            "description": "A course introducing machine learning concepts and their applications in Go.",
+            "type": "offline",
+            "courses": [
+                {
+                    "id": "M502",
+                    "title": "Machine Learning with Go",
+                    "description": "An introduction to machine learning concepts using Go."
+                }
+            ],
+            "instructor": "Alexios Nolan",
+            "schedules": [
+                {
+                    "id": "D005",
+                    "day": "Tuesday",
+                    "time": "07:15"
+                },
+                {
+                    "id": "D003",
+                    "day": "Monday",
+                    "time": "10:00"
+                },
+                {
+                    "id": "D017",
+                    "day": "Friday",
+                    "time": "07:15"
+                }
+            ]
+        }
+    ]
+}
