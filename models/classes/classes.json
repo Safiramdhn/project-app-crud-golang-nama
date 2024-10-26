@@ -14,16 +14,8 @@
             ],
             "instructor": "Mary Beth Julien",
             "schedules": [
-                {
-                    "id": "D006",
-                    "day": "Tuesday",
-                    "time": "08:30"
-                },
-                {
-                    "id": "D010",
-                    "day": "Wednesday",
-                    "time": "08:30"
-                }
+                "D006",
+                "D010"
             ]
         },
         {
@@ -45,11 +37,7 @@
             ],
             "instructor": "Mary Beth Julien",
             "schedules": [
-                {
-                    "id": "D019",
-                    "day": "Friday",
-                    "time": "10:00"
-                }
+                "D019"
             ]
         },
         {
@@ -66,21 +54,9 @@
             ],
             "instructor": "Damiaan Perez",
             "schedules": [
-                {
-                    "id": "D004",
-                    "day": "Monday",
-                    "time": "13:00"
-                },
-                {
-                    "id": "D009",
-                    "day": "Wednesday",
-                    "time": "07:15"
-                },
-                {
-                    "id": "D011",
-                    "day": "Wednesday",
-                    "time": "10:00"
-                }
+                "D004",
+                "D009",
+                "D011"
             ]
         },
         {
@@ -102,21 +78,9 @@
             ],
             "instructor": "Vilja Matsumura",
             "schedules": [
-                {
-                    "id": "D002",
-                    "day": "Monday",
-                    "time": "08:30"
-                },
-                {
-                    "id": "D008",
-                    "day": "Tuesday",
-                    "time": "13:00"
-                },
-                {
-                    "id": "D015",
-                    "day": "Thurday",
-                    "time": "10:00"
-                }
+                "D002",
+                "D008",
+                "D015"
             ]
         },
         {
@@ -133,11 +97,7 @@
             ],
             "instructor": "Gobnat Eide",
             "schedules": [
-                {
-                    "id": "D001",
-                    "day": "Monday",
-                    "time": "07:15"
-                }
+                "D001"
             ]
         },
         {
@@ -164,11 +124,7 @@
             ],
             "instructor": "Kira Jiang",
             "schedules": [
-                {
-                    "id": "D004",
-                    "day": "Monday",
-                    "time": "13:00"
-                }
+                "D004"
             ]
         },
         {
@@ -185,21 +141,9 @@
             ],
             "instructor": "Nikolaus Ortega",
             "schedules": [
-                {
-                    "id": "D006",
-                    "day": "Tuesday",
-                    "time": "08:30"
-                },
-                {
-                    "id": "D007",
-                    "day": "Tuesday",
-                    "time": "10:00"
-                },
-                {
-                    "id": "D012",
-                    "day": "Wednesday",
-                    "time": "13:00"
-                }
+                "D006",
+                "D007",
+                "D012"
             ]
         },
         {
@@ -221,16 +165,8 @@
             ],
             "instructor": "Mihajlo Scott",
             "schedules": [
-                {
-                    "id": "D013",
-                    "day": "Thurday",
-                    "time": "07:15"
-                },
-                {
-                    "id": "D014",
-                    "day": "Thurday",
-                    "time": "08:30"
-                }
+                "D013",
+                "D014"
             ]
         },
         {
@@ -247,21 +183,9 @@
             ],
             "instructor": "Delila Ashton",
             "schedules": [
-                {
-                    "id": "D002",
-                    "day": "Monday",
-                    "time": "08:30"
-                },
-                {
-                    "id": "D016",
-                    "day": "Thurday",
-                    "time": "13:00"
-                },
-                {
-                    "id": "D009",
-                    "day": "Wednesday",
-                    "time": "07:15"
-                }
+                "D002",
+                "D016",
+                "D009"
             ]
         },
         {
@@ -278,11 +202,7 @@
             ],
             "instructor": "Franka Baggio",
             "schedules": [
-                {
-                    "id": "D007",
-                    "day": "Tuesday",
-                    "time": "10:00"
-                }
+                "D007"
             ]
         },
         {
@@ -304,16 +224,8 @@
             ],
             "instructor": "Helga Brooke",
             "schedules": [
-                {
-                    "id": "D001",
-                    "day": "Monday",
-                    "time": "07:15"
-                },
-                {
-                    "id": "D 018",
-                    "day": "Friday",
-                    "time": "08:30"
-                }
+                "D001",
+                "D018"
             ]
         },
         {
@@ -330,21 +242,9 @@
             ],
             "instructor": "Alexios Nolan",
             "schedules": [
-                {
-                    "id": "D005",
-                    "day": "Tuesday",
-                    "time": "07:15"
-                },
-                {
-                    "id": "D003",
-                    "day": "Monday",
-                    "time": "10:00"
-                },
-                {
-                    "id": "D017",
-                    "day": "Friday",
-                    "time": "07:15"
-                }
+                "D005",
+                "D003",
+                "D017"
             ]
         }
     ]

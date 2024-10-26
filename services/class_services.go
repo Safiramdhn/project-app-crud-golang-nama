@@ -13,7 +13,7 @@ func GetClasses() (classes []models.Class) {
 	file, err := utils.GetJsonFileName("class")
 	if err != nil {
 		fmt.Println("Open file error message: ", err)
-		return classes
+		return nil
 	}
 	defer file.Close()
 
@@ -21,7 +21,7 @@ func GetClasses() (classes []models.Class) {
 	fileInfo, err := file.Stat()
 	if err != nil {
 		fmt.Println("File stat error: ", err)
-		return classes
+		return nil
 	}
 
 	if fileInfo.Size() > 0 {
@@ -31,4 +31,15 @@ func GetClasses() (classes []models.Class) {
 		}
 	}
 	return classes
+}
+
+func GetStudentClass(class_id string) (studenClass models.Class) {
+	clasess := GetClasses()
+
+	for _, class := range clasess {
+		if class.Id == class_id {
+			return class
+		}
+	}
+	return studenClass
 }

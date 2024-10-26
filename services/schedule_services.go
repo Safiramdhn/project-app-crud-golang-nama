@@ -32,3 +32,14 @@ func GetSchedules() (schedules []models.Schedule) {
 	}
 	return schedules
 }
+
+func GetOneSchedule(schedule_id string) (schedule models.Schedule) {
+	schedules := GetSchedules()
+
+	for _, scheduleData := range schedules {
+		if scheduleData.Id == schedule_id {
+			return scheduleData
+		}
+	}
+	return schedule
+}
