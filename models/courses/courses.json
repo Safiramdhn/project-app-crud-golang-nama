@@ -1,0 +1,54 @@
+{
+    "courses": [
+        {
+            "id": "M101",
+            "title": "Programming Algorithm",
+            "description": "This is a programming algorithm course"
+        },
+        {
+            "id": "M102",
+            "title": "Introduction to Go",
+            "description": "Learn the basics of Go programming language."
+        },
+        {
+            "id": "M201",
+            "title": "Data Structures in Go",
+            "description": "Understand data structures using Go."
+        },
+        {
+            "id": "M202",
+            "title": "Concurrency in Go",
+            "description": "An introduction to concurrent programming with Go."
+        },
+        {
+            "id": "M301",
+            "title": "Web Development with Go",
+            "description": "Learn to build web applications using Go and the Gin framework."
+        },
+        {
+            "id": "M302",
+            "title": "Testing in Go",
+            "description": "A guide to testing and test-driven development in Go."
+        },
+        {
+            "id": "M401",
+            "title": "Database Management with Go",
+            "description": "Learn how to interact with SQL and NoSQL databases in Go."
+        },
+        {
+            "id": "M402",
+            "title": "Microservices in Go",
+            "description": "An introduction to building microservices with Go."
+        },
+        {
+            "id": "M501",
+            "title": "Advanced Go Patterns",
+            "description": "Explore advanced programming patterns in Go."
+        },
+        {
+            "id": "M502",
+            "title": "Machine Learning with Go",
+            "description": "An introduction to machine learning concepts using Go."
+        }
+    ]
+}
