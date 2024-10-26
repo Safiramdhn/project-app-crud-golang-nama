@@ -52,17 +52,27 @@ func DashboardMenu(ctx context.Context) {
 		fmt.Println("1. Enrollments")
 		fmt.Println("2. Edit enrollments schedule")
 		fmt.Println("3. Add Class")
+		fmt.Println("4. Delete Enrollment")
+		fmt.Println("5. Enrollment History")
 		fmt.Print("99. Logout")
 		fmt.Scan(&option)
+		studentId := ctx.Value("student_id").(string)
 
 		switch option {
 		case 1:
 			// display student enrollment
-			studentId := ctx.Value("student_id").(string)
 			printStudentEnrollment(studentId)
 		case 2:
-			studentId := ctx.Value("student_id").(string)
+			// edit student class schedule
 			printEditClassForm(studentId)
+		case 3:
+			// add class
+			printAddClassForm(studentId)
+		case 4:
+			// delete enrollment
+			printDeleteForm(studentId)
+		case 5:
+			printDeactiveEnrollment(studentId)
 		case 99:
 			fmt.Println("Are you sure want to logout? (y/n)")
 			fmt.Scan(&logout)

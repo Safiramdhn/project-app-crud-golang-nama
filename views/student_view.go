@@ -83,6 +83,30 @@ func printEditClassForm(student_id string) {
 			fmt.Println("Invalid schedule id")
 			return
 		}
-		go services.EditEnrollmentSchedule(enroll_id, schedule_id)
+		go services.EditEnrollmentSchedule(enroll_id, studentClass.Id, schedule_id)
+	}
+}
+
+func printAddClassForm(student_id string) {
+	var class_id string
+	var studentSchedule []schedule.Schedule
+	utils.ClearScreen()
+	printClassList()
+	fmt.Println("Choose class ID")
+	fmt.Scan(&class_id)
+
+	studentEnroll := services.GetStudentEnrollment(student_id)
+
+	for _, enroll := range studentEnroll {
+		if enroll.Class.Id == class_id {
+			fmt.Println("You already enrolled this class")
+			if !utils.PromptContinue("add_class") {
+				utils.ClearScreen()
+				return
+			}
+		} else {
+			studentSchedule = append(studentSchedule, enroll.Schedule)
+
+		}
 	}
 }

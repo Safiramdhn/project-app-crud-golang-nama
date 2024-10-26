@@ -13,7 +13,7 @@ import (
 
 func LoginService(student_id, password string) (context.Context, error) {
 	// get student by id
-	student := getStudentData(student_id)
+	student := GetStudentData(student_id)
 	type key string
 
 	// password validation
@@ -33,7 +33,7 @@ func LoginService(student_id, password string) (context.Context, error) {
 	return sessionCtx, nil
 }
 
-func getStudentData(student_id string) models.Student {
+func GetStudentData(student_id string) models.Student {
 
 	// get student data from json file
 	var studentData models.Student
