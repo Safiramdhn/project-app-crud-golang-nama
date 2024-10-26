@@ -61,10 +61,8 @@ func DashboardMenu(ctx context.Context) {
 			studentId := ctx.Value("student_id").(string)
 			printStudentEnrollment(studentId)
 		case 2:
-			var enrol_id string
 			studentId := ctx.Value("student_id").(string)
-			printStudentEnrollment(studentId)
-			fmt.Scan(&enrol_id)
+			printEditClassForm(studentId)
 		case 99:
 			fmt.Println("Are you sure want to logout? (y/n)")
 			fmt.Scan(&logout)

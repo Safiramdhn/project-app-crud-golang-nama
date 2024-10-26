@@ -57,9 +57,15 @@ func printStudentEnrollment(student_id string) {
 	}
 }
 
-func printEditClassForm(enroll_id, class_id string) {
+func printEditClassForm(student_id string) {
 	utils.ClearScreen()
-	var schedule_id string
+	var schedule_id, class_id, enroll_id string
+
+	printStudentEnrollment(student_id)
+	fmt.Println("Choose your enroll id: ")
+	fmt.Scan(&enroll_id)
+	fmt.Println("Write your class id: ")
+	fmt.Scan(&class_id)
 
 	studentClass := services.GetStudentClass(class_id)
 	studentClassJson, err := json.MarshalIndent(studentClass, "", " ")

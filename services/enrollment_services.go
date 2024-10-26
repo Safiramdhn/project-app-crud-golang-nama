@@ -40,7 +40,7 @@ func GetStudentEnrollment(student_id string) (studentEnroll []models.Enrollments
 }
 
 func EditEnrollmentSchedule(enroll_id, schedule_id string) {
-	enrollments := getEnrollment()
+	enrollments := GetEnrollment()
 
 	for i := range enrollments {
 		if enrollments[i].Id == enroll_id {
@@ -51,7 +51,7 @@ func EditEnrollmentSchedule(enroll_id, schedule_id string) {
 	}
 }
 
-func getEnrollment() (enrollments []models.Enrollments) {
+func GetEnrollment() (enrollments []models.Enrollments) {
 	var enrollment models.Enrollments
 
 	file, err := utils.GetJsonFileName("enrollments")
