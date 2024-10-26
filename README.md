@@ -143,4 +143,4 @@ The application uses JSON files to store data:
 5. Open a Pull Request
 
 ## Authors
-- Safira - Initial work - [Safiramdhn]([url](https://github.com/Safiramdhn/))
+- Safira - Initial work - [Safiramdhn](https://github.com/Safiramdhn/)
