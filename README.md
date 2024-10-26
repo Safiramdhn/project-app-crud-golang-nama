@@ -11,7 +11,6 @@ Choco Academy is a student enrollment management system that allows students to:
 - Add new classes
 - Delete enrollments
 - View enrollment history
-![ERD](https://github.com/user-attachments/assets/e8c61d8f-5c2a-48d7-8c85-b40b027f5be0)
 
 ## Project Structure
 ```
@@ -66,7 +65,8 @@ project-app-crud-golang-safira/
 - Schedule conflict detection
 
 ## Data Models
-
+### ERD
+![ERD](https://github.com/user-attachments/assets/e8c61d8f-5c2a-48d7-8c85-b40b027f5be0)
 ### Student
 - ID
 - Name
