@@ -21,6 +21,8 @@ func GetJsonFileName(file_req string) (*os.File, error) {
 		filePath = filepath.Join("models", file_req, "schedules.json")
 	case "enrollments":
 		filePath = filepath.Join("models", file_req, "enrollments.json")
+	case "classes":
+		filePath = filepath.Join("models", file_req, "classes.json")
 	default:
 		fmt.Println("Invalid json file name")
 	}

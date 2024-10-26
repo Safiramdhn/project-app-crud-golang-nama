@@ -2,66 +2,66 @@ package services
 
 import (
 	"context"
-	"errors"
+	"encoding/json"
 	"fmt"
-
 	"time"
 
 	models "github.com/Safiramdhn/project-app-crud-golang-safira/models/students"
 	"github.com/Safiramdhn/project-app-crud-golang-safira/utils"
 )
 
-func LoginService(student_id, password string) (context.Context, error) {
-	// get student by id
-	student := GetStudentData(student_id)
-	type key string
-
-	// password validation
-	// if not match, throw error invalid password
-	if student.Password != password {
-		return nil, errors.New("Invalid password, please try again")
+func LoginService(studentID, password string, ctx context.Context) (timeoutCtx context.Context, cancelFunc context.CancelFunc) {
+	student := GetStudentData(studentID)
+	if student == nil {
+		// fmt.Println("Student not found")
+		return nil, nil
 	}
 
-	// create context with value student id
-	// add timeout 60s
-	ctx := context.Background()
-	ctxWithTimeout, cancel := context.WithTimeout(ctx, 1*time.Minute)
-	defer cancel()
-	sessionCtx := context.WithValue(ctxWithTimeout, key("student_id"), student_id)
+	// Validate password
+	if student.Password != password {
+		fmt.Println("Invalid password, please try again")
+		return nil, nil
+	}
 
-	// return context and error nil
-	return sessionCtx, nil
+	// Create a context with student ID and timeout
+	timeoutCtx, cancelFunc = context.WithTimeout(ctx, 20*time.Second)
+
+	return timeoutCtx, cancelFunc
 }
 
-func GetStudentData(student_id string) models.Student {
-
-	// get student data from json file
-	var studentData models.Student
+func GetStudentData(studentID string) *models.Student {
 	file, err := utils.GetJsonFileName("students")
 	if err != nil {
-		fmt.Println("Open file error message: ", err)
-		return studentData
+		fmt.Println("Failed to open file:", err)
+		return nil
 	}
 	defer file.Close()
 
-	// Check if the file is empty
 	fileInfo, err := file.Stat()
 	if err != nil {
-		fmt.Println("File stat error: ", err)
-		return studentData
+		fmt.Println("File stat error:", err)
+		return nil
 	}
 
+	// Proceed if file has content
 	if fileInfo.Size() > 0 {
-		students, err := studentData.JsonDecode(file)
-		if err != nil {
-			return studentData
+		var students []models.Student
+		decoder := json.NewDecoder(file)
+
+		// Try decoding as array first
+		if err := decoder.Decode(&students); err != nil {
+			fmt.Println("Decode error:", err)
+			return nil
 		}
 
-		for _, student := range students {
-			if student.Id == student_id {
-				studentData = student
+		// Search for the student
+		for i := range students {
+			if students[i].Id == studentID {
+				return &students[i]
 			}
 		}
 	}
-	return studentData
+
+	fmt.Println("Student not found for ID:", studentID)
+	return nil
 }

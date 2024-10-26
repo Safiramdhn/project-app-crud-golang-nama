@@ -1,17 +1,19 @@
 package services
 
 import (
+	"encoding/json"
 	"fmt"
+	"io"
 
 	class "github.com/Safiramdhn/project-app-crud-golang-safira/models/classes"
 	enrollment "github.com/Safiramdhn/project-app-crud-golang-safira/models/enrollments"
 	"github.com/Safiramdhn/project-app-crud-golang-safira/utils"
 )
 
-func GetClasses() (classes []class.Class) {
-	var class class.Class
+func GetClasses() []class.Class {
+	var classes []class.Class
 
-	file, err := utils.GetJsonFileName("class")
+	file, err := utils.GetJsonFileName("classes")
 	if err != nil {
 		fmt.Println("Open file error message: ", err)
 		return nil
@@ -26,8 +28,10 @@ func GetClasses() (classes []class.Class) {
 	}
 
 	if fileInfo.Size() > 0 {
-		classes, err = class.JsonDecode(file)
-		if err != nil {
+		decoder := json.NewDecoder(file)
+
+		if err := decoder.Decode(&classes); err != nil && err != io.EOF {
+			fmt.Println("Decode error: %w", err)
 			return nil
 		}
 	}

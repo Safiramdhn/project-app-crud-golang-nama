@@ -11,9 +11,9 @@ import (
 func PrintScheduleForm(schdules []string) string {
 	schdulesList := services.GetSchedules()
 
-	for _, schdule := range schdulesList {
-		if utils.Includes(schdules, schdule.Id) {
-			schdulesList = append(schdulesList[:0], schdule)
+	for _, schedule := range schdulesList {
+		if utils.Includes(schdules, schedule.Id) {
+			schdulesList = append(schdulesList[:0], schedule)
 		}
 	}
 
@@ -23,7 +23,7 @@ func PrintScheduleForm(schdules []string) string {
 		return ""
 	}
 	if len(schduleJson) == 0 {
-		fmt.Println("There is no schdule yet")
+		fmt.Println("There is no schedule yet")
 		return ""
 	} else {
 		var id string

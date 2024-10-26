@@ -1,11 +1,6 @@
 package models
 
 import (
-	"encoding/json"
-	"fmt"
-	"io"
-	"os"
-
 	class "github.com/Safiramdhn/project-app-crud-golang-safira/models/classes"
 	schedule "github.com/Safiramdhn/project-app-crud-golang-safira/models/schedules"
 	student "github.com/Safiramdhn/project-app-crud-golang-safira/models/students"
@@ -26,23 +21,4 @@ type EnrolledClass struct {
 	Class_type string
 	Instructor string
 	Schedule   schedule.Schedule
-}
-
-func (e *Enrollments) JsonDecode(file *os.File) ([]Enrollments, error) {
-	var enrollments []Enrollments
-	decoder := json.NewDecoder(file)
-
-	if err := decoder.Decode(&enrollments); err != nil && err != io.EOF {
-		return nil, fmt.Errorf("decode error: %w", err)
-	}
-
-	return enrollments, nil
-}
-
-func (e *Enrollments) JsonEncode(file *os.File, enrolls []Enrollments) error {
-	encoder := json.NewEncoder(file)
-	if err := encoder.Encode(&enrolls); err != nil {
-		return fmt.Errorf("encode error: %w", err)
-	}
-	return nil
 }

@@ -1,0 +1,70 @@
+[
+    {
+        "id": "E001",
+        "student": {
+            "id": "S004",
+            "name": "Pipo Chocorange",
+            "email": "pipo@email.com",
+            "password": "pipos004"
+        },
+        "class": {
+            "id": "C012",
+            "title": "Artificial Intelligence in Go Lang",
+            "description": "A course introducing machine learning concepts and their applications in Go.",
+            "type": "offline",
+            "courses": [
+                {
+                    "id": "M502",
+                    "title": "Machine Learning with Go",
+                    "description": "An introduction to machine learning concepts using Go."
+                }
+            ],
+            "instructor": "Alexios Nolan",
+            "schedules": [
+                "D005",
+                "D003",
+                "D017"
+            ]
+        },
+        "schedule": {
+            "id": "D003",
+            "day": "Monday",
+            "time": "10:00"
+        },
+        "status": "deleted"
+    },
+    {
+        "id": "E002",
+        "student": {
+            "id": "S004",
+            "name": "Pipo Chocorange",
+            "email": "pipo@email.com",
+            "password": "pipos004"
+        },
+        "class": {
+            "id": "C009",
+            "title": "Artificial Intelligence in Go Lang",
+            "description": "A course introducing machine learning concepts and their applications in Go.",
+            "type": "online",
+            "courses": [
+                {
+                    "id": "M502",
+                    "title": "Machine Learning with Go",
+                    "description": "An introduction to machine learning concepts using Go."
+                }
+            ],
+            "instructor": "Delila Ashton",
+            "schedules": [
+                "D002",
+                "D016",
+                "D009"
+            ]
+        },
+        "schedule": {
+            "id": "D009",
+            "day": "Wednesday",
+            "time": "07:15"
+        },
+        "status": "active"
+    }
+]

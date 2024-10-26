@@ -10,11 +10,15 @@ import (
 )
 
 func printStudentEnrollment(student_id string) {
+	// for {
 	utils.ClearScreen()
 	studentEnroll := services.GetStudentEnrollment(student_id)
 	if studentEnroll == nil {
 		fmt.Println("You not enrolled in any classes")
-		return
+		if !utils.PromptContinue("show class") {
+			utils.ClearScreen()
+			return
+		}
 	}
 
 	studentClasses := services.InitiateEnrolledClass(studentEnroll)
@@ -26,24 +30,32 @@ func printStudentEnrollment(student_id string) {
 	}
 	if len(studentClassJson) == 0 {
 		fmt.Println("There is no classes yet")
-	} else {
-		fmt.Println(string(studentClassJson))
-		utils.PromptReturnToMainMenu()
+		if !utils.PromptContinue("show class") {
+			utils.ClearScreen()
+			return
+		}
 	}
+	fmt.Println(string(studentClassJson))
 }
 
 func printDeleteEnrollForm(student_id string) {
-	var id string
-	printStudentEnrollment(student_id)
-	fmt.Println("Type enroll id to delete: ")
-	fmt.Scan(&id)
+	for {
+		var id string
+		printStudentEnrollment(student_id)
+		fmt.Println("Type enroll id to delete: ")
+		fmt.Scan(&id)
 
-	go services.DeleteEnrollment(id)
-	utils.PromptContinue("delete enrollment")
+		services.DeleteEnrollment(id)
+		if !utils.PromptContinue("delete enrollment") {
+			utils.ClearScreen()
+			return
+		}
+	}
 
 }
 
 func printDeactiveEnrollment(student_id string) {
+	utils.ClearScreen()
 	var deactiveEnroll []enrollment.Enrollments
 	enrollments := services.GetEnrollment()
 
@@ -62,6 +74,6 @@ func printDeactiveEnrollment(student_id string) {
 		fmt.Println("There is no deactive enroll yet")
 	} else {
 		fmt.Println(string(deactiveEnrollJson))
-		utils.PromptReturnToMainMenu()
 	}
+	utils.PromptReturnToMainMenu()
 }

@@ -4,7 +4,6 @@ import (
 	"encoding/json"
 	"fmt"
 
-	schedule "github.com/Safiramdhn/project-app-crud-golang-safira/models/schedules"
 	"github.com/Safiramdhn/project-app-crud-golang-safira/services"
 	"github.com/Safiramdhn/project-app-crud-golang-safira/utils"
 )
@@ -62,25 +61,23 @@ func printEditClassForm(student_id string) {
 	}
 }
 
-func printAddClassForm(student_id string) {
+func printAddClassForm(studentID string) {
 	for {
-		var class_id string
-		var studentSchedule []schedule.Schedule
 		utils.ClearScreen()
 		printClassList()
+
+		var classID string
 		fmt.Println("Choose class ID")
-		fmt.Scan(&class_id)
+		fmt.Scan(&classID)
 
-		studentEnroll := services.GetStudentEnrollment(student_id)
-
-		for _, enroll := range studentEnroll {
-			if enroll.Class.Id == class_id {
-				fmt.Println("You already enrolled this class")
-				break
-			}
-			studentSchedule = append(studentSchedule, enroll.Schedule)
+		studentEnrollments := services.GetStudentEnrollment(studentID)
+		if services.IsAlreadyEnrolled(studentEnrollments, classID) {
+			fmt.Println("You are already enrolled in this class")
+			continue
 		}
-		go services.CreateEnrollment(student_id, class_id, studentSchedule)
+
+		studentSchedule := services.GetStudentSchedule(studentEnrollments)
+		services.CreateEnrollment(studentID, classID, studentSchedule)
 
 		if !utils.PromptContinue("add class") {
 			utils.ClearScreen()

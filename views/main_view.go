@@ -26,22 +26,29 @@ func LoginView() {
 			time.Sleep(5 * time.Second)
 			continue
 		}
-		session, err := services.LoginService(student_id, password)
-		if err != nil {
-			fmt.Println("Login error message", err)
+
+		ctx := context.Background()
+		timeoutCtx, cancel := services.LoginService(student_id, password, ctx)
+		if timeoutCtx == nil {
+			fmt.Println("Login failed. Please check your credentials.")
+			time.Sleep(5 * time.Second)
+			continue
 		}
+
+		defer cancel() // Cancel when the session ends
+
 		select {
-		case <-session.Done():
-			fmt.Println("Session expired, please login again.")
+		case <-timeoutCtx.Done():
+			fmt.Println("Session Timeout, please login again")
 			time.Sleep(5 * time.Second)
 			continue
 		default:
-			DashboardMenu(session)
+			DashboardMenu(student_id)
 		}
 	}
 }
 
-func DashboardMenu(ctx context.Context) {
+func DashboardMenu(student_id string) {
 	for {
 		utils.ClearScreen()
 		var option int
@@ -49,30 +56,32 @@ func DashboardMenu(ctx context.Context) {
 		// display student name
 
 		// dashboard menu
+		fmt.Println("Dashboard")
 		fmt.Println("1. Enrollments")
 		fmt.Println("2. Edit enrollments schedule")
 		fmt.Println("3. Add Class")
 		fmt.Println("4. Delete Enrollment")
 		fmt.Println("5. Enrollment History")
-		fmt.Print("99. Logout")
+		fmt.Println("99. Logout")
+		fmt.Print("Choose Option:")
 		fmt.Scan(&option)
-		studentId := ctx.Value("student_id").(string)
 
 		switch option {
 		case 1:
 			// display student enrollment
-			printStudentEnrollment(studentId)
+			printStudentEnrollment(student_id)
+			utils.PromptReturnToMainMenu()
 		case 2:
 			// edit student class schedule
-			printEditClassForm(studentId)
+			printEditClassForm(student_id)
 		case 3:
 			// add class
-			printAddClassForm(studentId)
+			printAddClassForm(student_id)
 		case 4:
 			// delete enrollment
-			printDeleteEnrollForm(studentId)
+			printDeleteEnrollForm(student_id)
 		case 5:
-			printDeactiveEnrollment(studentId)
+			printDeactiveEnrollment(student_id)
 		case 99:
 			fmt.Println("Are you sure want to logout? (y/n)")
 			fmt.Scan(&logout)

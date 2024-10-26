@@ -1,15 +1,17 @@
 package services
 
 import (
+	"encoding/json"
 	"fmt"
+	"io"
 
 	models "github.com/Safiramdhn/project-app-crud-golang-safira/models/courses"
 	"github.com/Safiramdhn/project-app-crud-golang-safira/utils"
 )
 
-func GetCourses() (courses []models.Course) {
+func GetCourses() []models.Course {
 	// Get courses from json file
-	var course models.Course
+	var courses []models.Course
 
 	file, err := utils.GetJsonFileName("courses")
 	if err != nil {
@@ -26,8 +28,9 @@ func GetCourses() (courses []models.Course) {
 	}
 
 	if fileInfo.Size() > 0 {
-		courses, err = course.JsonDecode(file)
-		if err != nil {
+		decoder := json.NewDecoder(file)
+		if err := decoder.Decode(&courses); err != nil && err != io.EOF {
+			fmt.Println("decode error: %w", err)
 			return nil
 		}
 
