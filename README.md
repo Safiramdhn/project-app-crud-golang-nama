@@ -1,4 +1,4 @@
-![Screenshot 2024-10-26 100847](https://github.com/user-attachments/assets/484a4fb7-9d8d-4323-9815-02c4768eb362)# Choco Academy - Student Enrollment System
+# Choco Academy - Student Enrollment System
 
 A Go-based CLI application for managing student enrollments in an academic setting.
 
